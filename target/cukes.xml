@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="16" time="164.568">
+    <testcase classname="F01_Register | users could register with new accounts" name="guest user could register with valid data successfully" time="11.354">
+        <system-out><![CDATA[Given user go to register page..............................................passed
+When user select gender type................................................passed
+And user enter first name "Omar" and last name "Alaa".......................passed
+And user enter date of birth................................................passed
+And user enter email "404omaralaa407@gmail.com" field.......................passed
+And user enter company name.................................................passed
+And user fills Password fields "P@ssw0rd" and "P@ssw0rd"....................passed
+And user clicks on register button..........................................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F02_Login | user should be able to login to the system" name="user login with valid data" time="8.962">
+        <system-out><![CDATA[Given user navigate to login page...........................................passed
+When user enter "404omaralaa407@gmail.com" and "P@ssw0rd"...................passed
+Then user click on login button.............................................passed
+And user could login successfully and go to home page.......................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F02_Login | user should be able to login to the system" name="user login with invalid data" time="8.652">
+        <system-out><![CDATA[Given user navigate to login page...........................................passed
+When user enter "jasdfnads@gmail.com" and "Password"........................passed
+Then user click on login button.............................................passed
+And user could not login successfully and go to home page...................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F03_PasswordRecovery | User could reset password successfully" name="User could reset the password successfully" time="8.041">
+        <system-out><![CDATA[Given user navigate to login page...........................................passed
+And user click on forgot password...........................................passed
+Then user fill email with valid email.......................................passed
+And user click on Recover button............................................passed
+Then user should see message................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F04_Currency | user could switch between currencies US-Euro" name="Logged User could switch between currencies" time="30.119">
+        <system-out><![CDATA[Given user navigate to homepage.............................................passed
+When user change current currency to Euro...................................passed
+Then user should found all products prices in Euro..........................passed
+When user change current currency to Dollar.................................passed
+Then user should found all products prices in Dollar........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F05_Search | users will be able to search for products with different parameters" name="user could search using product name" time="9.029">
+        <system-out><![CDATA[Given user navigate to login page...........................................passed
+When user click on search bar...............................................passed
+And user search for product like "Apple"....................................passed
+And user click on search Button.............................................passed
+Then user could search successfully and go to search page...................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F05_Search | users will be able to search for products with different parameters" name="user search using SKU" time="7.964">
+        <system-out><![CDATA[Given user navigate to login page...........................................passed
+When user click on search bar...............................................passed
+And user search for product like "AP_MBP_13"................................passed
+And user click on search Button.............................................passed
+Then user could search successfully with SKU................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F05_Search | users will be able to search for products with different parameters" name="user search using invalid product name" time="9.442">
+        <system-out><![CDATA[Given user navigate to login page...........................................passed
+When user click on search bar...............................................passed
+And user search for product like "nothing"..................................passed
+And user click on search Button.............................................passed
+Then user could not search..................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F06_HoverCategories  |  user could hover categories and select sub category" name="user could hover categories" time="8.362">
+        <system-out><![CDATA[Given user navigate to homepage.............................................passed
+When user hover category and select subcategory.............................passed
+And user click on subcategory...............................................passed
+Then user go to relative product page.......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F08_FollowUs | users could open followUs links" name="user opens facebook link" time="8.317">
+        <system-out><![CDATA[Given user navigate to homepage.............................................passed
+When user opens facebook link...............................................passed
+Then "https://www.facebook.com/nopCommerce" is opened in new tab............passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F08_FollowUs | users could open followUs links" name="user opens twitter link" time="8.2">
+        <system-out><![CDATA[Given user navigate to homepage.............................................passed
+When user opens twitter link................................................passed
+Then "https://twitter.com/nopCommerce" is opened in new tab.................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F08_FollowUs | users could open followUs links" name="user opens rss link" time="9.433">
+        <failure message="Index 1 out of bounds for length 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[Given user navigate to homepage.............................................passed
+When user opens rss link....................................................passed
+Then "https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab.failed
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.example.stepDefinitions.SD08_FollowUs.opens_new_tab(SD08_FollowUs.java:21)
+	at ✽."https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab(file:///C:/Users/qqError404/IdeaProjects/E-CommerceAutomationProject/src/main/resources/features/F08_FollowUs.feature:20)
+]]></failure>
+    </testcase>
+    <testcase classname="F08_FollowUs | users could open followUs links" name="user opens youtube link" time="8.833">
+        <system-out><![CDATA[Given user navigate to homepage.............................................passed
+When user opens youtube link................................................passed
+Then "https://www.youtube.com/user/nopCommerce" is opened in new tab........passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F08_WishList  |  guest user could add products to wishlist" name="success message is visible after adding item to wishlist" time="9.338">
+        <system-out><![CDATA[When user navigate to login page............................................passed
+And user enter "404omarAlaa407@gmail.com" and "P@ssw0rd"....................passed
+Then user click on login button.............................................passed
+And user could login successfully and go to home page.......................passed
+When user add item to wishlist..............................................passed
+Then wishlist notification success is visible...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F08_WishList  |  guest user could add products to wishlist" name="number of wishlist items in home page is increased" time="9.627">
+        <system-out><![CDATA[When user navigate to login page............................................passed
+And user enter "404omarAlaa407@gmail.com" and "P@ssw0rd"....................passed
+Then user click on login button.............................................passed
+And user could login successfully and go to home page.......................passed
+When user add item to wishlist..............................................passed
+Then wishlist notification success is visible...............................passed
+And user get the number of wishlist items after adding item.................passed
+Then the number of wishlist increased.......................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="F08_WishList  |  guest user could add products to wishlist" name="added items are displayed on wishlist" time="8.546">
+        <failure message="The following asserts failed:&#10;&#9;URL login expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnurl=%2F]" type="java.lang.AssertionError"><![CDATA[When user navigate to login page............................................passed
+And user enter "404omarAlaa407@gmail.com" and "P@ssw0rd"....................passed
+Then user click on login button.............................................passed
+And user could login successfully and go to home page.......................failed
+When user add item to wishlist..............................................skipped
+Then wishlist notification success is visible...............................skipped
+And user get the number of wishlist items after adding item.................skipped
+And user go to wishlist page................................................skipped
+Then the number of items greater than zero in wishlist page.................skipped
+
+StackTrace:
+java.lang.AssertionError: The following asserts failed:
+	URL login expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnurl=%2F]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefinitions.SD02_Login.step4(SD02_Login.java:32)
+	at ✽.user could login successfully and go to home page(file:///C:/Users/qqError404/IdeaProjects/E-CommerceAutomationProject/src/main/resources/features/F09_WishList.feature:8)
+]]></failure>
+    </testcase>
+</testsuite>

@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: org.example.testRunners.R01_Smoke
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 165.62 s <<< FAILURE! - in org.example.testRunners.R01_Smoke
+org.example.testRunners.R01_Smoke.runScenario["user opens rss link", "F08_FollowUs | users could open followUs links"](12)  Time elapsed: 9.456 s  <<< FAILURE!
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:100)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:106)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:302)
+	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.example.stepDefinitions.SD08_FollowUs.opens_new_tab(SD08_FollowUs.java:21)
+	at ✽."https://demo.nopcommerce.com/new-online-store-is-open" is opened in new tab(file:///C:/Users/qqError404/IdeaProjects/E-CommerceAutomationProject/src/main/resources/features/F08_FollowUs.feature:20)
+
+org.example.testRunners.R01_Smoke.runScenario["added items are displayed on wishlist", "F08_WishList  |  guest user could add products to wishlist"](16)  Time elapsed: 8.553 s  <<< FAILURE!
+java.lang.AssertionError: 
+The following asserts failed:
+	URL login expected [https://demo.nopcommerce.com/] but found [https://demo.nopcommerce.com/login?returnurl=%2F]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
+	at org.example.stepDefinitions.SD02_Login.step4(SD02_Login.java:32)
+	at ✽.user could login successfully and go to home page(file:///C:/Users/qqError404/IdeaProjects/E-CommerceAutomationProject/src/main/resources/features/F09_WishList.feature:8)
+
