@@ -12,7 +12,9 @@ import io.cucumber.testng.CucumberOptions;
                         "json:target/cucumber.json",
                         "junit:target/cukes.xml",
                         "rerun:target/rerun.txt"},
-                tags = "@Regression"
+                tags = "@Regression",
+        plugin = { "pretty", "junit:target/cucumber-reports/Cucumber.xml" },
+        monochrome = true
         )
 
 public class R1_Regression extends AbstractTestNGCucumberTests {
